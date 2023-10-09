@@ -63,22 +63,19 @@
 
           <ul class="menu-inner py-1">
             <!-- Dashboards -->
-            <li class="menu-item active open">
-              <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                <div data-i18n="Dashboards">Dashboards</div>
-                <div class="badge bg-danger rounded-pill ms-auto">5</div>
-              </a>
-            </li>
+            <li class="menu-item" :class="{ active: activeItem === 'home' }" @click="setActive('home')">
+        <router-link :to="{ name: 'home' }" class="menu-link menu-toggle">
+          <i class="menu-icon tf-icons bx bx-home-circle"></i>
+          <div data-i18n="Dashboards">Home</div>
+        </router-link>
+      </li>
 
-            <!-- Layouts -->
-            <li class="menu-item">
-              <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-layout"></i>
-                <div data-i18n="Layouts">Layouts</div>
-              </a>
-
-            </li>
+      <li class="menu-item" :class="{ active: activeItem === 'about' }" @click="setActive('about')">
+        <router-link :to="{ name: 'about' }" class="menu-link menu-toggle">
+          <i class="menu-icon tf-icons bx bx-layout"></i>
+          <div data-i18n="Layouts">Manage</div>
+        </router-link>
+      </li>
           </ul>
         </aside>
 </template>
